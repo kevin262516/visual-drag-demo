@@ -6,15 +6,17 @@
     "prepare": "husky install",
     "dev": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint",
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
     "pre-commit": "lint-staged"
   },
   "lint-staged": {
-    "src/**/*.{js,jsx}": "eslint",
-    "src/**/*.{vue,scss,css,sass}": "stylelint --allow-empty-input"
+    "src/**/*.{js,jsx}": "eslint --fix",
+    "src/**/*.{vue,scss,css,sass}": "stylelint --fix"
   },
   "dependencies": {
+    "ace-builds": "^1.12.3",
     "core-js": "^3.8.3",
+    "echarts": "^5.4.0",
     "element-ui": "^2.14.1",
     "html-to-image": "^1.9.0",
     "mathjs": "^10.5.3",

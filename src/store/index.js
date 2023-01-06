@@ -50,6 +50,20 @@ const data = {
         ...snapshot.mutations,
         ...lock.mutations,
 
+        aceSetCanvasData(state, value) {
+            state.canvasStyleData = value
+        },
+
+        aceSetcurComponent(state, value) {
+            for (let i = 0; i < state.componentData.length; i++) {
+                if (state.componentData[i].id === value.id) {
+                    state.componentData.splice(i, 1)
+                }
+            }
+            state.componentData.push(value)
+            state.curComponent = value
+        },
+
         setClickComponentStatus(state, status) {
             state.isClickComponent = status
         },
