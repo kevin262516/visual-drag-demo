@@ -54,6 +54,11 @@ export default {
             return this.$store.state.curComponent
         },
     },
+    watch: {
+        curComponent() {
+            this.activeName = this.curComponent.collapseName
+        },
+    },
     created() {
         this.activeName = this.curComponent.collapseName
     },
